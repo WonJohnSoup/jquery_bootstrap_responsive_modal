@@ -11,13 +11,24 @@
 		$(document).ready(function(){
 
 			$('#form1').submit(function(){
-				$('#card_placement').append("<div class='card_box' data-toggle='modal' data-target='#myModal'><h3><b>" + $('#first_name_input').val() + " " +$('#last_name_input').val() + "</b><br>" + $('#description_input').val() + "<br></h3><p>(Click on me for modal)</p></div>");
+				$('#card_placement').append(
+					"<div class='card_box' data-toggle='modal' data-target='#myModal'><h3><b>" + 
+					$('#first_name_input').val() + 
+					" " + 
+					$('#last_name_input').val() + 
+					"</b><br>" + 
+					$('#description_input').val() + 
+					"<br></h3><p class='red'>(Click on me for modal)</p></div>");
 				return false;
 			})
 
 			$('#form1').submit(function(){
-				$('.modal-header').html("<h4>Your contact card, <b>" + $('#first_name_input').val() + " " +$('#last_name_input').val() + "</b></h4>");
-				$('.modal-body').html("<p>" + $('#description_input').val() + "<p>");
+				$('.modal-header').html("<h4>Your contact card, <b>" + 
+					$('#first_name_input').val() + 
+					" " + 
+					$('#last_name_input').val() + "</b></h4>");
+				$('.modal-body').html("<p>" + 
+					$('#description_input').val() + "<p>");
 				return false;
 			})
 

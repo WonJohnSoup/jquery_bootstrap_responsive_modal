@@ -43,6 +43,10 @@
 			float: right;
 		}
 
+		.red{
+			color: #ff1225;
+		}
+
 		@media (max-width: 501px) {
 			 .header {
 			  text-align: left;
