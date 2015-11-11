@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Card</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheet.css">
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#form1').submit(function(){
+				$('#card_placement').append("<div class='card_box' data-toggle='modal' data-target='#myModal'><h3><b>" + $('#first_name_input').val() + " " +$('#last_name_input').val() + "</b><br>" + $('#description_input').val() + "<br></h3><p>(Click on me for modal)</p></div>");
+				return false;
+			})
+
+			$('#form1').submit(function(){
+				$('.modal-header').html("<h4>Your contact card, <b>" + $('#first_name_input').val() + " " +$('#last_name_input').val() + "</b></h4>");
+				$('.modal-body').html("<p>" + $('#description_input').val() + "<p>");
+				return false;
+			})
+
+			$('#add_user').click(function(){
+				$('#form1').submit();
+			})
+
+		})
+
+	</script>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<img class="img-responsive" src="logo.png" alt="no image">
+				<h2 class="header">Responsive Modal Card Contact App</h2>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-md-5">
+				<form id="form1" class="form-horizontal" action="process.php" method="post" role="form">
+						<input id="first_name_input" class="form-control" type="text" name="first_name" placeholder="Enter First name">
+						<br><br>
+						<input id="last_name_input" class="form-control" type="text" name="last_name" placeholder="Enter Last name">
+						<br><br>
+						<textarea id="description_input" class="form-control" name="description" rows="3" cols="21" placeholder="Enter Description"></textarea>
+				</form>
+				<button id="add_user" class="btn btn-success">Add User</button>
+			</div>
+			<div class="col-md-2 hidden-xs"></div>
+			<div id="card_placement" class="col-md-5 col-xs-12">
+					<!-- new card created here -->
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal card -->
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">Close this</button>
+				</div>
+				<div class="modal-body">
+					<p>Some body content</p>
+				</div>
+				<div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

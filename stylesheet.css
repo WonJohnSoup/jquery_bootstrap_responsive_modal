@@ -1,0 +1,50 @@
+
+		body {
+		    background-image: url("wood.jpg");
+		    background-repeat: no-repeat;
+		    min-width: 300px;
+		    padding: 10px;
+		}
+
+		.header{
+			text-align: right;
+			color: #104267;
+		}
+
+
+		form{
+			margin-top: 30px;
+		}
+
+		button{
+			margin-top: 30px;
+		}
+
+		textarea{
+			margin-top: 20px;
+		}
+
+		.card_box{
+			background-color: white;
+			border-radius: 5px;
+			border: 1px solid #E0EBEB;
+			padding-bottom: 50px;
+			padding-left: 20px;
+			margin-top: 20px;
+		}
+
+		.short{
+			max-width: 500px;
+		}
+
+		img{
+			width: 50px;
+			height: 50px;
+			float: right;
+		}
+
+		@media (max-width: 501px) {
+			 .header {
+			  text-align: left;
+			}
+		}
